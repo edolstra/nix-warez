@@ -48,11 +48,11 @@ stdenv.mkDerivation rec {
 
       mkdir -p $out/bin $lib
 
-      ln -s ${json_c}/lib/libjson-c.so.2 $lib/libjson.so.0
+      ln -s ${json_c}/lib/libjson-c.so.? $lib/libjson.so.0
 
       cat > $out/bin/BaldursGate <<EOF
       cd ${data}/data/noarch/game
-      LD_LIBRARY_PATH=$lib:${libPath}:\$LD_LIBRARY_PATH:${mesa}/lib exec ${glibc}/lib/ld-linux.so.2 ./BaldursGate
+      LD_LIBRARY_PATH=$lib:${libPath}:\$LD_LIBRARY_PATH:${libGL}/lib exec ${glibc}/lib/ld-linux.so.2 ./BaldursGate
       EOF
 
       chmod +x $out/bin/BaldursGate
