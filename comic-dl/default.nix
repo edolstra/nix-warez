@@ -3,6 +3,7 @@ with python3Packages;
 
 let
 
+/*
   cfscrape = buildPythonPackage rec {
     pname = "cfscrape";
     version = "1.9.7";
@@ -10,6 +11,21 @@ let
     src = fetchPypi {
       inherit pname version;
       sha256 = "0fh97spqv69r0amcbjhhkl5nbjc2dmddsv91fw9lcbw7wrrc2zzs";
+    };
+
+    buildInputs = [ requests ];
+  };
+*/
+
+  cfscrape = buildPythonPackage rec {
+    pname = "cfscrape";
+    version = "2.0.3";
+
+    src = fetchFromGitHub {
+      owner = "lukele";
+      repo = "cloudflare-scrape";
+      rev = "6c004e80516ab9d19082645fc01b614287433a8f";
+      sha256 = "0c5kfnmghpj506kw5jfgcbrsjlxcx38q13x3lg1zxnagli3wxbqp";
     };
 
     buildInputs = [ requests ];
