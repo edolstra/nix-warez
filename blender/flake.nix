@@ -66,6 +66,22 @@ in
 
     defaultPackage = packages.blender_2_80;
 
+    apps = {
+
+      blender_2_79 = {
+        type = "app";
+        program = "${packages.blender_2_79}/bin/blender";
+      };
+
+      blender_2_80 = {
+        type = "app";
+        program = "${packages.blender_2_80}/bin/blender";
+      };
+
+    };
+
+    defaultApp = apps.blender_2_80;
+
   };
 }
 
