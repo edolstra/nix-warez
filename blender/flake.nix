@@ -29,36 +29,44 @@ let
         '';
     };
 
+  mkTest = { pkgs, blender }:
+    with pkgs;
+    runCommand "blender-test" { buildInputs = [ blender ]; }
+      ''
+        blender --version
+        touch $out
+      '';
+
 in
 
 {
   name = "blender-bin";
 
-  epoch = 2019;
+  epoch = 201906;
 
   description = "A free and open source 3D creation suite (upstream binaries)";
 
   inputs = [ "nixpkgs" ];
 
-  outputs = inputs: rec {
+  outputs = inputs: let pkgs = inputs.nixpkgs.outputs.legacyPackages; in rec {
 
-    packages = let pkgs = inputs.nixpkgs.outputs.legacyPackages; in {
+    packages = {
 
       blender_2_79 = mkBlender {
         inherit pkgs;
-        name = "blender-bin-2.79-d83a72ec104c";
+        name = "blender-bin-2.79-054dbb833e15";
         src = import <nix/fetchurl.nix> {
           url = https://builder.blender.org/download/blender-2.79-054dbb833e15-linux-glibc224-x86_64.tar.bz2;
-          hash = "sha256-4gaUtZMo60R585Vku0XEbBL1uFUtKYlspgGDh+g2Pn4=";
+          hash = "sha256-/qbRx4KKiJBka84M4iXB8z3PKzqBIuWG5Zihyf//QTU=";
         };
       };
 
       blender_2_80 = mkBlender {
         inherit pkgs;
-        name = "blender-bin-2.80-fc336f973d52";
+        name = "blender-bin-2.80-d62a749fcf48";
         src = import <nix/fetchurl.nix> {
-          url = https://builder.blender.org/download/blender-2.80-fc336f973d52-linux-glibc224-x86_64.tar.bz2;
-          hash = "sha256-B+5fM482tj3PQbdCI9wE2AtHI4kPdIK+aMbkFxXTwhY=";
+          url = https://builder.blender.org/download/blender-2.80-d62a749fcf48-linux-glibc224-x86_64.tar.bz2;
+          hash = "sha256-agHg8/T7w/88p6O9f6kq1r8AwunBs2MHrJxCmcErPOs=";
         };
       };
 
@@ -81,6 +89,11 @@ in
     };
 
     defaultApp = apps.blender_2_80;
+
+    checks = {
+      blender_2_79 = mkTest { inherit pkgs; blender = packages.blender_2_79; };
+      blender_2_80 = mkTest { inherit pkgs; blender = packages.blender_2_80; };
+    };
 
   };
 }
