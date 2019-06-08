@@ -9,7 +9,7 @@ rec {
 
   outputs = inputs: rec {
 
-    packages = with import inputs.nixpkgs { system = "i686-linux"; }; {
+    packages = with inputs.nixpkgs.legacyPackages; {
 
       baldurs-gate-ee =
         let
@@ -23,7 +23,7 @@ rec {
             runCommand "baldurs-gate-ee-${version}-data"
               {
                 outputHashMode = "recursive";
-                outputHash = "sha256:0gl9v118yyal1v843j5rjrgk17i4fdq2ng36grn7jys4izah0zdp";
+                outputHash = "sha256-t30A1Y9Ee3lsfmY8K3BzJJ4wX5a5yEHQDlR5j0LYiT4=";
 
                 buildInputs = [ unzip ];
 
@@ -60,7 +60,7 @@ rec {
 
               cat > $out/bin/BaldursGate <<EOF
               cd ${data}/data/noarch/game
-              LD_LIBRARY_PATH=$lib:${libPath}:\$LD_LIBRARY_PATH:${libGL}/lib exec ${glibc}/lib/ld-linux.so.2 ./BaldursGate
+              LD_LIBRARY_PATH=$lib:${libPath}:\$LD_LIBRARY_PATH:${libGL}/lib exec ${glibc}/lib/ld-linux-x86-64.so.2 ./BaldursGate64
               EOF
 
               chmod +x $out/bin/BaldursGate
