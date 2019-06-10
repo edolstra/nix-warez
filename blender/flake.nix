@@ -54,7 +54,7 @@ in
 
       blender_2_79 = mkBlender {
         inherit pkgs;
-        name = "blender-bin-2.79-054dbb833e15";
+        name = "blender-bin-2.79-20190523-054dbb833e15";
         src = import <nix/fetchurl.nix> {
           url = https://builder.blender.org/download/blender-2.79-054dbb833e15-linux-glibc224-x86_64.tar.bz2;
           hash = "sha256-/qbRx4KKiJBka84M4iXB8z3PKzqBIuWG5Zihyf//QTU=";
@@ -63,10 +63,10 @@ in
 
       blender_2_80 = mkBlender {
         inherit pkgs;
-        name = "blender-bin-2.80-d62a749fcf48";
+        name = "blender-bin-2.80-20190609-030c7df19da9";
         src = import <nix/fetchurl.nix> {
-          url = https://builder.blender.org/download/blender-2.80-d62a749fcf48-linux-glibc224-x86_64.tar.bz2;
-          hash = "sha256-agHg8/T7w/88p6O9f6kq1r8AwunBs2MHrJxCmcErPOs=";
+          url = https://builder.blender.org/download/blender-2.80-030c7df19da9-linux-glibc224-x86_64.tar.bz2;
+          hash = "sha256-awi5URUcvJNuJdC9esrIiQYAgfFRKvcsrRiHm7A5VW8=";
         };
       };
 
