@@ -46,7 +46,7 @@ in
 
   description = "A free and open source 3D creation suite (upstream binaries)";
 
-  inputs = [ "nixpkgs" ];
+  inputs = [ "nixpkgs/release-19.03" ];
 
   outputs = inputs: let pkgs = inputs.nixpkgs.outputs.legacyPackages; in rec {
 
@@ -63,10 +63,10 @@ in
 
       blender_2_80 = mkBlender {
         inherit pkgs;
-        name = "blender-bin-2.80-20190616-40a8c4908818";
+        name = "blender-bin-2.80-20190706-741f80864e79";
         src = import <nix/fetchurl.nix> {
-          url = https://builder.blender.org/download/blender-2.80-40a8c4908818-linux-glibc224-x86_64.tar.bz2;
-          hash = "sha256-LIYhUgSKlKVQZakojfAJGdNkYsf5xmnBK/3QDNH3xu4=";
+          url = https://builder.blender.org/download/blender-2.80-741f80864e79-linux-glibc217-x86_64.tar.bz2;
+          hash = "sha256-oEHCuyI8SNw6FWbT/qwxz7MHET7162wt9QKv9/r+eWc=";
         };
       };
 
