@@ -61,18 +61,18 @@ in
         };
       };
 
-      blender_2_80 = mkBlender {
+      blender_2_81 = mkBlender {
         inherit pkgs;
-        name = "blender-bin-2.80-20190706-741f80864e79";
+        name = "blender-bin-2.81-20190803-5e5cf9ea9f7b";
         src = import <nix/fetchurl.nix> {
-          url = https://builder.blender.org/download/blender-2.80-741f80864e79-linux-glibc217-x86_64.tar.bz2;
-          hash = "sha256-oEHCuyI8SNw6FWbT/qwxz7MHET7162wt9QKv9/r+eWc=";
+          url = https://builder.blender.org/download/blender-2.81-5e5cf9ea9f7b-linux-glibc217-x86_64.tar.bz2;
+          hash = "sha256-jUHfAmi3lCxPxrusnahtufbah9zVV+glNbSqQxA4T0Q=";
         };
       };
 
     };
 
-    defaultPackage = packages.blender_2_80;
+    defaultPackage = packages.blender_2_81;
 
     apps = {
 
@@ -81,20 +81,19 @@ in
         program = "${packages.blender_2_79}/bin/blender";
       };
 
-      blender_2_80 = {
+      blender_2_81 = {
         type = "app";
-        program = "${packages.blender_2_80}/bin/blender";
+        program = "${packages.blender_2_81}/bin/blender";
       };
 
     };
 
-    defaultApp = apps.blender_2_80;
+    defaultApp = apps.blender_2_81;
 
     checks = {
       blender_2_79 = mkTest { inherit pkgs; blender = packages.blender_2_79; };
-      blender_2_80 = mkTest { inherit pkgs; blender = packages.blender_2_80; };
+      blender_2_81 = mkTest { inherit pkgs; blender = packages.blender_2_81; };
     };
 
   };
 }
-
