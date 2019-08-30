@@ -1,0 +1,12 @@
+diff -ru orig/setup.py src/setup.py
+--- orig/setup.py	1970-01-01 01:00:01.000000000 +0100
++++ src/setup.py	2019-08-13 21:28:13.815355300 +0200
+@@ -5,7 +5,7 @@
+ 
+ setup(
+   name = 'comic_dl',
+-  packages = ['comic_dl','comic_dl.sites', 'comic_dl.manga_eden'], # this must be the same as the name above
++  packages = ['comic_dl', 'comic_dl.sites', 'comic_dl.manga_eden', 'comic_dl.readcomiconline'], # this must be the same as the name above
+   install_requires=["selenium",
+                       "requests",
+                       "more_itertools",
