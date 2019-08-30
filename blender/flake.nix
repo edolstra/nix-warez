@@ -61,10 +61,10 @@ in
 
       blender_2_81 = mkBlender {
         inherit pkgs;
-        name = "blender-bin-2.81-20190803-5e5cf9ea9f7b";
+        name = "blender-bin-2.81-20190830-f033fa0fbcfb";
         src = import <nix/fetchurl.nix> {
-          url = https://builder.blender.org/download/blender-2.81-5e5cf9ea9f7b-linux-glibc217-x86_64.tar.bz2;
-          hash = "sha256-jUHfAmi3lCxPxrusnahtufbah9zVV+glNbSqQxA4T0Q=";
+          url = https://builder.blender.org/download/blender-2.81-f033fa0fbcfb-linux-glibc217-x86_64.tar.bz2;
+          hash = "sha256-O2/nPw/KGbhL4lxiMAKKTq1Kq3BTnz9UBorXCDPrz5Y=";
         };
       };
 
