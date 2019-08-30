@@ -1,15 +1,13 @@
 rec {
-  name = "baldurs-gate-ee";
-
-  epoch = 201906;
+  epoch = 201909;
 
   description = "Baldur's Gate: Enhanced Edition, the classic BioWare RPG";
 
-  inputs = [ "nixpkgs" ];
+  inputs.nixpkgs.uri = "nixpkgs/release-19.03";
 
-  outputs = inputs: rec {
+  outputs = { self, nixpkgs }: rec {
 
-    packages = with inputs.nixpkgs.legacyPackages; {
+    packages = with nixpkgs.legacyPackages; {
 
       baldurs-gate-ee =
         let

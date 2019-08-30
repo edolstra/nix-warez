@@ -40,15 +40,13 @@ let
 in
 
 {
-  name = "blender-bin";
-
-  epoch = 201906;
+  epoch = 201909;
 
   description = "A free and open source 3D creation suite (upstream binaries)";
 
-  inputs = [ "nixpkgs/release-19.03" ];
+  inputs.nixpkgs.uri = "nixpkgs/release-19.03";
 
-  outputs = inputs: let pkgs = inputs.nixpkgs.outputs.legacyPackages; in rec {
+  outputs = { self, nixpkgs }: let pkgs = nixpkgs.legacyPackages; in rec {
 
     packages = {
 

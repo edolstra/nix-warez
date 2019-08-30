@@ -3,20 +3,19 @@ with python3Packages;
 
 let
 
-/*
   cfscrape = buildPythonPackage rec {
     pname = "cfscrape";
-    version = "1.9.7";
+    version = "2.0.8";
 
     src = fetchPypi {
       inherit pname version;
-      sha256 = "0fh97spqv69r0amcbjhhkl5nbjc2dmddsv91fw9lcbw7wrrc2zzs";
+      sha256 = "1f7cv2j08y4m6hz8z8nqljmpsw0jiy4ahaxddxwssf9gzywkr4am";
     };
 
     buildInputs = [ requests ];
   };
-*/
 
+/*
   cfscrape = buildPythonPackage rec {
     pname = "cfscrape";
     version = "2.0.3";
@@ -30,6 +29,7 @@ let
 
     buildInputs = [ requests ];
   };
+*/
 
   bs4 = buildPythonPackage rec {
     pname = "bs4";
@@ -97,12 +97,14 @@ in
 
 buildPythonApplication rec {
   pname = "comic-dl-${version}";
-  version = "2019.01.26";
+  version = "2019.05.26";
 
   src = fetchzip {
     url = "https://github.com/Xonshiz/comic-dl/archive/${version}.tar.gz";
-    sha256 = "15src2385xq5x5l2fhyf227pdkzz304sskjjnrzngl56jqkyqish";
+    sha256 = "1bykkvvd5v3k21mrl5wkzqf0z5j0pnzl92ws2jqwhqlscwd5f956";
   };
+
+  patches = [ ./install.patch ];
 
   postInstall = ''
     mkdir -p $out/bin
