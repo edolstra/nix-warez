@@ -63,40 +63,40 @@
         };
 
         blender_2_81 = mkBlender {
-          name = "blender-bin-2.81-20190901-a513586cd23e";
+          name = "blender-bin-2.81-20191014-879d269e8769";
           src = import <nix/fetchurl.nix> {
-            url = https://builder.blender.org/download/blender-2.81-a513586cd23e-linux-glibc217-x86_64.tar.bz2;
-            hash = "sha256-RkeNU0AwMIF3H+LLJApK+noBvaiaVNDLCG68/bkkGFA=";
+            url = https://builder.blender.org/download/blender-2.81-879d269e8769-linux-glibc217-x86_64.tar.bz2;
+            hash = "sha256-9Bcw8UJgI6gg2x/0CAnts7YOVD+RAITA622I436sEyc=";
           };
         };
 
       };
 
-      packages = {
+      packages.x86_64-linux = {
         inherit (pkgs) blender_2_79 blender_2_81;
       };
 
-      defaultPackage = self.packages.blender_2_81;
+      defaultPackage.x86_64-linux = self.packages.x86_64-linux.blender_2_81;
 
       apps = {
 
-        blender_2_79 = {
+        x86_64-linux.blender_2_79 = {
           type = "app";
-          program = "${self.packages.blender_2_79}/bin/blender";
+          program = "${self.packages.x86_64-linux.blender_2_79}/bin/blender";
         };
 
-        blender_2_81 = {
+        x86_64-linux.blender_2_81 = {
           type = "app";
-          program = "${self.packages.blender_2_81}/bin/blender";
+          program = "${self.packages.x86_64-linux.blender_2_81}/bin/blender";
         };
 
       };
 
-      defaultApp = self.apps.blender_2_81;
+      defaultApp.x86_64-linux = self.apps.x86_64-linux.blender_2_81;
 
-      checks = {
-        blender_2_79 = mkTest { blender = self.packages.blender_2_79; };
-        blender_2_81 = mkTest { blender = self.packages.blender_2_81; };
+      checks.x86_64-linux = {
+        blender_2_79 = mkTest { blender = self.packages.x86_64-linux.blender_2_79; };
+        blender_2_81 = mkTest { blender = self.packages.x86_64-linux.blender_2_81; };
       };
 
     };
