@@ -63,10 +63,10 @@
         };
 
         blender_2_81 = mkBlender {
-          name = "blender-bin-2.81-20191021-388c954cb537";
+          name = "blender-bin-2.81-20191022-ac18c3c28dee";
           src = import <nix/fetchurl.nix> {
-            url = https://builder.blender.org/download/blender-2.81-388c954cb537-linux-glibc217-x86_64.tar.bz2;
-            hash = "sha256-fYlckS4Vc1fAfW4X766Rh+3uenS9SZ33VQAUQwmzFrY=";
+            url = https://builder.blender.org/download/blender-2.81-ac18c3c28dee-linux-glibc217-x86_64.tar.bz2;
+            hash = "sha256-d7MkZ+at3KdJ5UzjWhATdKc9cZ+6vHO2Y0xZ4qR0w4o=";
           };
         };
 
