@@ -63,17 +63,25 @@
         };
 
         blender_2_81 = mkBlender {
-          name = "blender-bin-2.81-20191022-ac18c3c28dee";
+          name = "blender-bin-2.81a";
           src = import <nix/fetchurl.nix> {
-            url = https://builder.blender.org/download/blender-2.81-ac18c3c28dee-linux-glibc217-x86_64.tar.bz2;
-            hash = "sha256-d7MkZ+at3KdJ5UzjWhATdKc9cZ+6vHO2Y0xZ4qR0w4o=";
+            url = https://ftp.nluug.nl/pub/graphics/blender/release/Blender2.81/blender-2.81a-linux-glibc217-x86_64.tar.bz2;
+            hash = "sha256-CNcYUF0esdJh77qWsHhyIKdtNXzluUrKEI/J4MM51sY=";
+          };
+        };
+
+        blender_2_82 = mkBlender {
+          name = "blender-bin-2.82-20191214-c6ba94133934";
+          src = import <nix/fetchurl.nix> {
+            url = https://builder.blender.org/download/blender-2.82-c6ba94133934-linux-glibc217-x86_64.tar.xz;
+            hash = "sha256-+lmotJfxW/R26jmENEufxFtEaPxEhYHh5Xub5uIReS4=";
           };
         };
 
       };
 
       packages.x86_64-linux = {
-        inherit (pkgs) blender_2_79 blender_2_81;
+        inherit (pkgs) blender_2_79 blender_2_81 blender_2_82;
       };
 
       defaultPackage.x86_64-linux = self.packages.x86_64-linux.blender_2_81;
@@ -90,6 +98,11 @@
           program = "${self.packages.x86_64-linux.blender_2_81}/bin/blender";
         };
 
+        x86_64-linux.blender_2_82 = {
+          type = "app";
+          program = "${self.packages.x86_64-linux.blender_2_82}/bin/blender";
+        };
+
       };
 
       defaultApp.x86_64-linux = self.apps.x86_64-linux.blender_2_81;
@@ -97,6 +110,7 @@
       checks.x86_64-linux = {
         blender_2_79 = mkTest { blender = self.packages.x86_64-linux.blender_2_79; };
         blender_2_81 = mkTest { blender = self.packages.x86_64-linux.blender_2_81; };
+        blender_2_82 = mkTest { blender = self.packages.x86_64-linux.blender_2_82; };
       };
 
     };
