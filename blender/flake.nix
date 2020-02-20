@@ -71,20 +71,28 @@
         };
 
         blender_2_82 = mkBlender {
-          name = "blender-bin-2.82-20191214-c6ba94133934";
+          name = "blender-bin-2.82";
           src = import <nix/fetchurl.nix> {
-            url = https://builder.blender.org/download/blender-2.82-c6ba94133934-linux-glibc217-x86_64.tar.xz;
-            hash = "sha256-+lmotJfxW/R26jmENEufxFtEaPxEhYHh5Xub5uIReS4=";
+            url = https://ftp.nluug.nl/pub/graphics/blender/release/Blender2.82/blender-2.82-linux64.tar.xz;
+            hash = "sha256-sTYA+iyiPqG7pRHjplmbZ5Ks3oCxgHB8PqddtZKpuRY=";
+          };
+        };
+
+        blender_2_83 = mkBlender {
+          name = "blender-bin-2.83-20200220-d95e9c7cf80a";
+          src = import <nix/fetchurl.nix> {
+            url = https://builder.blender.org/download/blender-2.83-d95e9c7cf80a-linux64.tar.xz;
+            hash = "sha256-1XU2jpIdxq+VgEXl0TyuiU9lSqfLiqvtDgSiLcBNRWQ=";
           };
         };
 
       };
 
       packages.x86_64-linux = {
-        inherit (pkgs) blender_2_79 blender_2_81 blender_2_82;
+        inherit (pkgs) blender_2_79 blender_2_81 blender_2_82 blender_2_83;
       };
 
-      defaultPackage.x86_64-linux = self.packages.x86_64-linux.blender_2_81;
+      defaultPackage.x86_64-linux = self.packages.x86_64-linux.blender_2_82;
 
       apps = {
 
@@ -103,14 +111,20 @@
           program = "${self.packages.x86_64-linux.blender_2_82}/bin/blender";
         };
 
+        x86_64-linux.blender_2_83 = {
+          type = "app";
+          program = "${self.packages.x86_64-linux.blender_2_83}/bin/blender";
+        };
+
       };
 
-      defaultApp.x86_64-linux = self.apps.x86_64-linux.blender_2_81;
+      defaultApp.x86_64-linux = self.apps.x86_64-linux.blender_2_82;
 
       checks.x86_64-linux = {
         blender_2_79 = mkTest { blender = self.packages.x86_64-linux.blender_2_79; };
         blender_2_81 = mkTest { blender = self.packages.x86_64-linux.blender_2_81; };
         blender_2_82 = mkTest { blender = self.packages.x86_64-linux.blender_2_82; };
+        blender_2_83 = mkTest { blender = self.packages.x86_64-linux.blender_2_83; };
       };
 
     };
