@@ -1,0 +1,47 @@
+{
+  "nodes": {
+    "comic-dl": {
+      "flake": false,
+      "info": {
+        "lastModified": 1578161841,
+        "narHash": "sha256-njvvp7/JVriJy1cbZj8QAhR9e7ckPxoh4tWL0BHNv88="
+      },
+      "locked": {
+        "owner": "Xonshiz",
+        "repo": "comic-dl",
+        "rev": "d96d7ea18bcb52deaee0af63fd7eca4a79edcad0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Xonshiz",
+        "repo": "comic-dl",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "info": {
+        "lastModified": 1583402222,
+        "narHash": "sha256-j7WJlbJD7AO8mhtAMvsqvAFxCprYzg234H8QPaQEWgE="
+      },
+      "locked": {
+        "owner": "edolstra",
+        "repo": "nixpkgs",
+        "rev": "54a27fb2fc5fbd8927f9f6dc77fe1de1faa05266",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "ref": "release-19.09",
+        "type": "indirect"
+      }
+    },
+    "root": {
+      "inputs": {
+        "comic-dl": "comic-dl",
+        "nixpkgs": "nixpkgs"
+      }
+    }
+  },
+  "root": "root",
+  "version": 5
+}

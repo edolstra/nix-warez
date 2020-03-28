@@ -3,7 +3,7 @@
 
   description = "A free and open source 3D creation suite (upstream binaries)";
 
-  inputs.nixpkgs.uri = "nixpkgs/release-19.09";
+  inputs.nixpkgs.url = "nixpkgs/release-19.09";
 
   outputs = { self, nixpkgs }:
 
