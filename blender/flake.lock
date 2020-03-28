@@ -1,15 +1,14 @@
 {
-  "inputs": {
+  "nodes": {
     "nixpkgs": {
       "info": {
-        "lastModified": 1581348815,
-        "narHash": "sha256-ZYGphR59gsdFhtZYDoeuCtULm8ym/qJSHIslih9b1s8="
+        "lastModified": 1583402222,
+        "narHash": "sha256-j7WJlbJD7AO8mhtAMvsqvAFxCprYzg234H8QPaQEWgE="
       },
-      "inputs": {},
       "locked": {
         "owner": "edolstra",
         "repo": "nixpkgs",
-        "rev": "d959778e0934c4c93896d509a65de798909c7cdd",
+        "rev": "54a27fb2fc5fbd8927f9f6dc77fe1de1faa05266",
         "type": "github"
       },
       "original": {
@@ -17,7 +16,13 @@
         "ref": "release-19.09",
         "type": "indirect"
       }
+    },
+    "root": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      }
     }
   },
-  "version": 4
+  "root": "root",
+  "version": 5
 }
