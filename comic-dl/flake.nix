@@ -25,7 +25,7 @@
 
         comic-dl = buildPythonApplication rec {
           pname = "comic-dl";
-          version = "${lib.substring 0 8 inputs.comic-dl.lastModified}";
+          version = "${lib.substring 0 8 inputs.comic-dl.lastModifiedDate}";
 
           src = inputs.comic-dl;
 
