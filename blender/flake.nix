@@ -79,10 +79,10 @@
         };
 
         blender_2_83 = mkBlender {
-          name = "blender-bin-2.83-20200425-f418eddf8e1c";
+          name = "blender-bin-2.83-20200426-d0d16eb7d347";
           src = import <nix/fetchurl.nix> {
-            url = https://builder.blender.org/download/blender-2.83-f418eddf8e1c-linux64.tar.xz;
-            hash = "sha256-B1a805bY9yvmBJofQ0n6u9TTt65qgVIyzKvrLBzzTxs=";
+            url = https://builder.blender.org/download/blender-2.83-d0d16eb7d347-linux64.tar.xz;
+            hash = "sha256-k45FMXGrVnZHEjm3/lU4M4pacEtvbIsFztib7lFECUM=";
           };
         };
 
