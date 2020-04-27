@@ -40,6 +40,9 @@
 
               patchelf --set-interpreter "$(cat $NIX_CC/nix-support/dynamic-linker)" \
                 blender/blender
+
+              patchelf --set-interpreter "$(cat $NIX_CC/nix-support/dynamic-linker)"  \
+                $out/libexec/blender/*/python/bin/python3*
             '';
         };
 
