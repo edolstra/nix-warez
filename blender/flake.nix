@@ -1,6 +1,4 @@
 {
-  edition = 201909;
-
   description = "A free and open source 3D creation suite (upstream binaries)";
 
   inputs.nixpkgs.url = "nixpkgs/nixos-20.03";
@@ -82,10 +80,10 @@
         };
 
         blender_2_83 = mkBlender {
-          name = "blender-bin-2.83-20200426-d0d16eb7d347";
+          name = "blender-bin-2.83-20200518-008e96494008";
           src = import <nix/fetchurl.nix> {
-            url = https://builder.blender.org/download/blender-2.83-d0d16eb7d347-linux64.tar.xz;
-            hash = "sha256-k45FMXGrVnZHEjm3/lU4M4pacEtvbIsFztib7lFECUM=";
+            url = https://builder.blender.org/download/blender-2.83-008e96494008-linux64.tar.xz;
+            hash = "sha256-pirgRyutj60WF61xfBknNZJG7rfIklSvyQgrTcdTngI=";
           };
         };
 
