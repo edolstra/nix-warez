@@ -2,14 +2,12 @@
   "nodes": {
     "comic-dl": {
       "flake": false,
-      "info": {
-        "lastModified": 1578161841,
-        "narHash": "sha256-njvvp7/JVriJy1cbZj8QAhR9e7ckPxoh4tWL0BHNv88="
-      },
       "locked": {
+        "lastModified": 1587976664,
+        "narHash": "sha256-jINb8/1EPsW2b/xKwLmxEhOtjGxKgdlsTIXPP7IkV+E=",
         "owner": "Xonshiz",
         "repo": "comic-dl",
-        "rev": "d96d7ea18bcb52deaee0af63fd7eca4a79edcad0",
+        "rev": "a4110ccd1ce5e3e8eea95699a3dbcd00658f87be",
         "type": "github"
       },
       "original": {
@@ -19,19 +17,17 @@
       }
     },
     "nixpkgs": {
-      "info": {
-        "lastModified": 1583402222,
-        "narHash": "sha256-j7WJlbJD7AO8mhtAMvsqvAFxCprYzg234H8QPaQEWgE="
-      },
       "locked": {
-        "owner": "edolstra",
+        "lastModified": 1592495204,
+        "narHash": "sha256-+AdAIr4FJCb2ltFY1YsUQYrloBEB8l/snAAmwLvCRhA=",
+        "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "54a27fb2fc5fbd8927f9f6dc77fe1de1faa05266",
+        "rev": "2b417708c282d84316366f4125b00b29c49df10f",
         "type": "github"
       },
       "original": {
         "id": "nixpkgs",
-        "ref": "release-19.09",
+        "ref": "nixos-20.03",
         "type": "indirect"
       }
     },
@@ -43,5 +39,5 @@
     }
   },
   "root": "root",
-  "version": 5
+  "version": 7
 }
