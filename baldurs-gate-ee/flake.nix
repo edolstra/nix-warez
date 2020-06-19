@@ -1,15 +1,15 @@
 rec {
-  epoch = 201909;
-
   description = "Baldur's Gate: Enhanced Edition, the classic BioWare RPG";
 
-  inputs.nixpkgs.uri = "nixpkgs/release-19.03";
+  inputs.nixpkgs.url = "nixpkgs/nixos-20.03";
 
-  outputs = { self, nixpkgs }: rec {
+  outputs = { self, nixpkgs }: {
 
-    packages = with nixpkgs.legacyPackages; {
+    packages.x86_64-linux = {
 
       baldurs-gate-ee =
+        with import nixpkgs { config.permittedInsecurePackages = [ "openssl-1.0.2u" ]; system = "x86_64-linux"; };
+
         let
           version = "2.5.23121";
 
@@ -40,7 +40,7 @@ rec {
           libPath = lib.makeLibraryPath
             [ openal
               gcc.cc
-              openssl
+              openssl_1_0_2
               expat
               xorg.libX11
             ];
@@ -73,11 +73,11 @@ rec {
 
     };
 
-    defaultPackage = packages.baldurs-gate-ee;
+    defaultPackage.x86_64-linux = self.packages.x86_64-linux.baldurs-gate-ee;
 
-    defaultApp = {
+    defaultApp.x86_64-linux = {
       type = "app";
-      program = "${packages.baldurs-gate-ee}/bin/BaldursGate";
+      program = "${self.packages.x86_64-linux.baldurs-gate-ee}/bin/BaldursGate";
     };
 
   };
