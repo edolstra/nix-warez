@@ -80,10 +80,10 @@
         };
 
         blender_2_83 = mkBlender {
-          name = "blender-bin-2.83.3";
+          name = "blender-bin-2.83.5";
           src = import <nix/fetchurl.nix> {
-            url = https://ftp.nluug.nl/pub/graphics/blender/release/Blender2.83/blender-2.83.3-linux64.tar.xz;
-            hash = "sha256-/Hsaqd/QCptocgqVLTGilwwadzfZj1RNZHvHiq6F1EU=";
+            url = https://ftp.nluug.nl/pub/graphics/blender/release/Blender2.83/blender-2.83.5-linux64.tar.xz;
+            hash = "sha256-sSaZPtLeDh51HPVcKfK7RdAAWJ4iiJ4EnJ0L+yOGuiI=";
           };
         };
 
