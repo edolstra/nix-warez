@@ -88,10 +88,10 @@
         };
 
         blender_2_90 = mkBlender {
-          name = "blender-bin-2.90-20200602-2e52b3206cc6";
+          name = "blender-bin-2.90.0";
           src = import <nix/fetchurl.nix> {
-            url = https://builder.blender.org/download/blender-2.90.0-2e52b3206cc6-linux64.tar.xz;
-            hash = "sha256-ljW60sh0ZN7HugQ8wu6o6CMILIRQZVnnf1l6IHUwQCg=";
+            url = https://ftp.nluug.nl/pub/graphics/blender/release/Blender2.90/blender-2.90.0-linux64.tar.xz;
+            hash = "sha256-0Mkhj6T8mBIE09GHw1tRaLTfTqceLnT7Yb4VQLk1qDw=";
           };
         };
 
@@ -101,7 +101,7 @@
         inherit (pkgs) blender_2_79 blender_2_81 blender_2_82 blender_2_83 blender_2_90;
       };
 
-      defaultPackage.x86_64-linux = self.packages.x86_64-linux.blender_2_83;
+      defaultPackage.x86_64-linux = self.packages.x86_64-linux.blender_2_90;
 
       apps = {
 
@@ -132,7 +132,7 @@
 
       };
 
-      defaultApp.x86_64-linux = self.apps.x86_64-linux.blender_2_83;
+      defaultApp.x86_64-linux = self.apps.x86_64-linux.blender_2_90;
 
       checks.x86_64-linux = {
         blender_2_79 = mkTest { blender = self.packages.x86_64-linux.blender_2_79; };
