@@ -103,10 +103,25 @@
           };
         };
 
+        blender_2_92 = mkBlender {
+          name = "blender-bin-2.92.0rc";
+          src = import <nix/fetchurl.nix> {
+            url = https://builder.blender.org/download/blender-2.92.0rc-linux64.tar.xz;
+            hash = "sha256-GdmcXumWhqDNptI3E3fGSc7Iwyfl19zZEdlWUW6MoyI=";
+          };
+        };
+
       };
 
       packages.x86_64-linux = {
-        inherit (pkgs) blender_2_79 blender_2_81 blender_2_82 blender_2_83 blender_2_90 blender_2_91;
+        inherit (pkgs)
+          blender_2_79
+          blender_2_81
+          blender_2_82
+          blender_2_83
+          blender_2_90
+          blender_2_91
+          blender_2_92;
       };
 
       defaultPackage.x86_64-linux = self.packages.x86_64-linux.blender_2_91;
@@ -143,6 +158,11 @@
           program = "${self.packages.x86_64-linux.blender_2_91}/bin/blender";
         };
 
+        x86_64-linux.blender_2_92 = {
+          type = "app";
+          program = "${self.packages.x86_64-linux.blender_2_92}/bin/blender";
+        };
+
       };
 
       defaultApp.x86_64-linux = self.apps.x86_64-linux.blender_2_91;
@@ -154,6 +174,7 @@
         blender_2_83 = mkTest { blender = self.packages.x86_64-linux.blender_2_83; };
         blender_2_90 = mkTest { blender = self.packages.x86_64-linux.blender_2_90; };
         blender_2_91 = mkTest { blender = self.packages.x86_64-linux.blender_2_91; };
+        blender_2_92 = mkTest { blender = self.packages.x86_64-linux.blender_2_92; };
       };
 
     };
