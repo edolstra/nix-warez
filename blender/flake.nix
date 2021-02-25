@@ -104,10 +104,10 @@
         };
 
         blender_2_92 = mkBlender {
-          name = "blender-bin-2.92.0rc";
+          name = "blender-bin-2.92.0";
           src = import <nix/fetchurl.nix> {
-            url = https://builder.blender.org/download/blender-2.92.0rc-linux64.tar.xz;
-            hash = "sha256-GdmcXumWhqDNptI3E3fGSc7Iwyfl19zZEdlWUW6MoyI=";
+            url = https://ftp.nluug.nl/pub/graphics/blender/release/Blender2.92/blender-2.92.0-linux64.tar.xz;
+            hash = "sha256-LNF61unWwkGsFLhK1ucrUHruyXnaPZJrGhRuiODrPrQ=";
           };
         };
 
@@ -124,7 +124,7 @@
           blender_2_92;
       };
 
-      defaultPackage.x86_64-linux = self.packages.x86_64-linux.blender_2_91;
+      defaultPackage.x86_64-linux = self.packages.x86_64-linux.blender_2_92;
 
       apps = {
 
@@ -165,7 +165,7 @@
 
       };
 
-      defaultApp.x86_64-linux = self.apps.x86_64-linux.blender_2_91;
+      defaultApp.x86_64-linux = self.apps.x86_64-linux.blender_2_92;
 
       checks.x86_64-linux = {
         blender_2_79 = mkTest { blender = self.packages.x86_64-linux.blender_2_79; };
