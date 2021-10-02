@@ -112,10 +112,10 @@
         };
 
         blender_2_93 = mkBlender {
-          name = "blender-bin-2.93.0";
+          name = "blender-bin-2.93.4";
           src = import <nix/fetchurl.nix> {
-            url = https://ftp.nluug.nl/pub/graphics/blender/release/Blender2.93/blender-2.93.0-linux-x64.tar.xz;
-            hash = "sha256-RrSyrD4O8XaL5PYzMtFdiki89b/xiSDTsh47iqqsheM=";
+            url = https://ftp.nluug.nl/pub/graphics/blender/release/Blender2.93/blender-2.93.4-linux-x64.tar.xz;
+            hash = "sha256-orm2M6SSYMVcpmw+pjElEZ7ODszOmnylZGqD5lSKM8g=";
           };
         };
 
