@@ -42,6 +42,8 @@
               patchelf --set-interpreter "$(cat $NIX_CC/nix-support/dynamic-linker)"  \
                 $out/libexec/blender/*/python/bin/python3*
             '';
+
+          meta.mainProgram = "blender";
         };
 
       mkTest = { blender }:
@@ -119,6 +121,14 @@
           };
         };
 
+        blender_3_0 = mkBlender {
+          name = "blender-bin-3.0.0";
+          src = import <nix/fetchurl.nix> {
+            url = https://ftp.nluug.nl/pub/graphics/blender/release/Blender3.0/blender-3.0.0-linux-x64.tar.xz;
+            hash = "sha256-GbCd/PXT86BognRU8KcEqaqcgmNQ9zAWEhr+9fTSh84=";
+          };
+        };
+
       };
 
       packages.x86_64-linux = {
@@ -130,56 +140,11 @@
           blender_2_90
           blender_2_91
           blender_2_92
-          blender_2_93;
+          blender_2_93
+          blender_3_0;
       };
 
-      defaultPackage.x86_64-linux = self.packages.x86_64-linux.blender_2_93;
-
-      apps = {
-
-        x86_64-linux.blender_2_79 = {
-          type = "app";
-          program = "${self.packages.x86_64-linux.blender_2_79}/bin/blender";
-        };
-
-        x86_64-linux.blender_2_81 = {
-          type = "app";
-          program = "${self.packages.x86_64-linux.blender_2_81}/bin/blender";
-        };
-
-        x86_64-linux.blender_2_82 = {
-          type = "app";
-          program = "${self.packages.x86_64-linux.blender_2_82}/bin/blender";
-        };
-
-        x86_64-linux.blender_2_83 = {
-          type = "app";
-          program = "${self.packages.x86_64-linux.blender_2_83}/bin/blender";
-        };
-
-        x86_64-linux.blender_2_90 = {
-          type = "app";
-          program = "${self.packages.x86_64-linux.blender_2_90}/bin/blender";
-        };
-
-        x86_64-linux.blender_2_91 = {
-          type = "app";
-          program = "${self.packages.x86_64-linux.blender_2_91}/bin/blender";
-        };
-
-        x86_64-linux.blender_2_92 = {
-          type = "app";
-          program = "${self.packages.x86_64-linux.blender_2_92}/bin/blender";
-        };
-
-        x86_64-linux.blender_2_93 = {
-          type = "app";
-          program = "${self.packages.x86_64-linux.blender_2_93}/bin/blender";
-        };
-
-      };
-
-      defaultApp.x86_64-linux = self.apps.x86_64-linux.blender_2_93;
+      defaultPackage.x86_64-linux = self.packages.x86_64-linux.blender_3_0;
 
       checks.x86_64-linux = {
         blender_2_79 = mkTest { blender = self.packages.x86_64-linux.blender_2_79; };
@@ -189,7 +154,7 @@
         blender_2_90 = mkTest { blender = self.packages.x86_64-linux.blender_2_90; };
         blender_2_91 = mkTest { blender = self.packages.x86_64-linux.blender_2_91; };
         blender_2_92 = mkTest { blender = self.packages.x86_64-linux.blender_2_92; };
-        blender_2_93 = mkTest { blender = self.packages.x86_64-linux.blender_2_93; };
+        blender_3_0  = mkTest { blender = self.packages.x86_64-linux.blender_3_0; };
       };
 
     };
