@@ -31,6 +31,9 @@
               cd $out/libexec
               mv blender-* blender
 
+              mkdir -p $out/share/applications
+              mv ./blender/blender.desktop $out/share/applications/blender.desktop
+
               mkdir $out/bin
 
               makeWrapper $out/libexec/blender/blender $out/bin/blender \
