@@ -150,6 +150,15 @@
           };
         };
 
+        blender_3_2 = mkBlender {
+          pname = "blender-bin";
+          version = "3.2.0";
+          src = import <nix/fetchurl.nix> {
+            url = https://ftp.nluug.nl/pub/graphics/blender/release/Blender3.2/blender-3.2.0-linux-x64.tar.xz;
+            hash = "sha256-B8k4BRjuHuHuPVNT5HvxBVacsoYPi/RaNXQ7T4zWt0I=";
+          };
+        };
+
       };
 
       packages.x86_64-linux = rec {
@@ -163,8 +172,9 @@
           blender_2_92
           blender_2_93
           blender_3_0
-          blender_3_1;
-        default = blender_3_1;
+          blender_3_1
+          blender_3_2;
+        default = blender_3_2;
       };
 
       checks.x86_64-linux = {
@@ -177,6 +187,7 @@
         blender_2_92 = mkTest { blender = self.packages.x86_64-linux.blender_2_92; };
         blender_3_0  = mkTest { blender = self.packages.x86_64-linux.blender_3_0; };
         blender_3_1  = mkTest { blender = self.packages.x86_64-linux.blender_3_1; };
+        blender_3_2  = mkTest { blender = self.packages.x86_64-linux.blender_3_2; };
       };
 
     };
