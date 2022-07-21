@@ -152,14 +152,16 @@
 
         blender_3_2 = mkBlender {
           pname = "blender-bin";
-          version = "3.2.0";
+          version = "3.2.1";
           src = import <nix/fetchurl.nix> {
-            url = https://ftp.nluug.nl/pub/graphics/blender/release/Blender3.2/blender-3.2.0-linux-x64.tar.xz;
-            hash = "sha256-B8k4BRjuHuHuPVNT5HvxBVacsoYPi/RaNXQ7T4zWt0I=";
+            url = https://ftp.nluug.nl/pub/graphics/blender/release/Blender3.2/blender-3.2.1-linux-x64.tar.xz;
+            hash = "sha256-02OoNtA6JGI0HX9crJi+ICQSDmSCWPmujntpyfiNasE=";
           };
         };
 
       };
+
+      lib.mkBlender = mkBlender;
 
       packages.x86_64-linux = rec {
         inherit (pkgs)
