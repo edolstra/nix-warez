@@ -161,10 +161,10 @@
 
         blender_3_3 = mkBlender {
           pname = "blender-bin";
-          version = "3.3.0";
+          version = "3.3.1";
           src = import <nix/fetchurl.nix> {
-            url = https://ftp.nluug.nl/pub/graphics/blender/release/Blender3.3/blender-3.3.0-linux-x64.tar.xz;
-            hash = "sha256-gjrdtNQJyExEzoJYhbAizvAuX7K6kmkzEuEVfZtQCrI=";
+            url = https://ftp.nluug.nl/pub/graphics/blender/release/Blender3.3/blender-3.3.1-linux-x64.tar.xz;
+            hash = "sha256-MImkhd1iF4XXpwIImrpy0HuPczo2LpAewUSbmjeVRvI=";
           };
         };
       };
