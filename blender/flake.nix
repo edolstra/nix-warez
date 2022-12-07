@@ -37,7 +37,7 @@
               mkdir $out/bin
 
               makeWrapper $out/libexec/blender/blender $out/bin/blender \
-                --prefix LD_LIBRARY_PATH : /run/opengl-driver/lib:${lib.makeLibraryPath [ xorg.libX11 xorg.libXi xorg.libXxf86vm xorg.libXfixes xorg.libXrender libGLU libglvnd numactl SDL2 libdrm ocl-icd ]}
+                --prefix LD_LIBRARY_PATH : /run/opengl-driver/lib:${lib.makeLibraryPath [ xorg.libX11 xorg.libXi xorg.libXxf86vm xorg.libXfixes xorg.libXrender libxkbcommon libGLU libglvnd numactl SDL2 libdrm ocl-icd stdenv.cc.cc.lib ]}
 
               patchelf --set-interpreter "$(cat $NIX_CC/nix-support/dynamic-linker)" \
                 blender/blender
@@ -167,6 +167,15 @@
             hash = "sha256-MImkhd1iF4XXpwIImrpy0HuPczo2LpAewUSbmjeVRvI=";
           };
         };
+
+        blender_3_4 = mkBlender {
+          pname = "blender-bin";
+          version = "3.4.0";
+          src = import <nix/fetchurl.nix> {
+            url = https://ftp.nluug.nl/pub/graphics/blender/release/Blender3.4/blender-3.4.0-linux-x64.tar.xz;
+            hash = "sha256-+ar2kznkqtO3knpM97o3JFPjk99mLJK8H+35TgxrU4I=";
+          };
+        };
       };
 
       lib.mkBlender = mkBlender;
@@ -184,8 +193,9 @@
           blender_3_0
           blender_3_1
           blender_3_2
-          blender_3_3;
-        default = blender_3_3;
+          blender_3_3
+          blender_3_4;
+        default = blender_3_4;
       };
 
       checks.x86_64-linux = {
@@ -200,6 +210,7 @@
         blender_3_1  = mkTest { blender = self.packages.x86_64-linux.blender_3_1; };
         blender_3_2  = mkTest { blender = self.packages.x86_64-linux.blender_3_2; };
         blender_3_3  = mkTest { blender = self.packages.x86_64-linux.blender_3_3; };
+        blender_3_4  = mkTest { blender = self.packages.x86_64-linux.blender_3_4; };
       };
 
     };
