@@ -37,7 +37,7 @@
               mkdir $out/bin
 
               makeWrapper $out/libexec/blender/blender $out/bin/blender \
-                --prefix LD_LIBRARY_PATH : /run/opengl-driver/lib:${lib.makeLibraryPath [ xorg.libX11 xorg.libXi xorg.libXxf86vm xorg.libXfixes xorg.libXrender libxkbcommon libGLU libglvnd numactl SDL2 libdrm ocl-icd stdenv.cc.cc.lib ]}
+                --prefix LD_LIBRARY_PATH : /run/opengl-driver/lib:${lib.makeLibraryPath [ wayland xorg.libX11 xorg.libXi xorg.libXxf86vm xorg.libXfixes xorg.libXrender libxkbcommon libGLU libglvnd numactl SDL2 libdrm ocl-icd stdenv.cc.cc.lib ]}
 
               patchelf --set-interpreter "$(cat $NIX_CC/nix-support/dynamic-linker)" \
                 blender/blender
