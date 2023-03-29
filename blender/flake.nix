@@ -12,7 +12,7 @@
         overlays = [ self.overlays.default ];
       };
 
-      mkBlender = { pname, version, src }:
+      mkBlender = { pname, version, src, extraLibs ? [] }:
         with pkgs;
 
         stdenv.mkDerivation rec {
@@ -37,7 +37,7 @@
               mkdir $out/bin
 
               makeWrapper $out/libexec/blender/blender $out/bin/blender \
-                --prefix LD_LIBRARY_PATH : /run/opengl-driver/lib:${lib.makeLibraryPath [ wayland libdecor xorg.libX11 xorg.libXi xorg.libXxf86vm xorg.libXfixes xorg.libXrender libxkbcommon libGLU libglvnd numactl SDL2 libdrm ocl-icd stdenv.cc.cc.lib ]}
+                --prefix LD_LIBRARY_PATH : /run/opengl-driver/lib:${lib.makeLibraryPath ([ wayland libdecor xorg.libX11 xorg.libXi xorg.libXxf86vm xorg.libXfixes xorg.libXrender libxkbcommon libGLU libglvnd numactl SDL2 libdrm ocl-icd stdenv.cc.cc.lib ] ++ extraLibs)}
 
               patchelf --set-interpreter "$(cat $NIX_CC/nix-support/dynamic-linker)" \
                 blender/blender
@@ -176,6 +176,16 @@
             hash = "sha256-FJf4P5Ppu73nRUIseV7RD+FfkvViK0Qhdo8Un753aYE=";
           };
         };
+
+        blender_3_5 = mkBlender {
+          pname = "blender-bin";
+          version = "3.5.0";
+          src = import <nix/fetchurl.nix> {
+            url = https://ftp.nluug.nl/pub/graphics/blender/release/Blender3.5/blender-3.5.0-linux-x64.tar.xz;
+            hash = "sha256-p01Sgi1XU6H/thesdku6zBKkpt7EwrkekMwpNaQP/2g=";
+          };
+          extraLibs = with pkgs; [xorg.libSM xorg.libICE zlib];
+        };
       };
 
       lib.mkBlender = mkBlender;
@@ -194,8 +204,9 @@
           blender_3_1
           blender_3_2
           blender_3_3
-          blender_3_4;
-        default = blender_3_4;
+          blender_3_4
+          blender_3_5;
+        default = blender_3_5;
       };
 
       checks.x86_64-linux = {
@@ -211,6 +222,7 @@
         blender_3_2  = mkTest { blender = self.packages.x86_64-linux.blender_3_2; };
         blender_3_3  = mkTest { blender = self.packages.x86_64-linux.blender_3_3; };
         blender_3_4  = mkTest { blender = self.packages.x86_64-linux.blender_3_4; };
+        blender_3_5  = mkTest { blender = self.packages.x86_64-linux.blender_3_5; };
       };
 
     };
