@@ -185,10 +185,10 @@
 
         blender_3_5 = mkBlender {
           pname = "blender-bin";
-          version = "3.5.0";
+          version = "3.5.1";
           src = import <nix/fetchurl.nix> {
-            url = https://ftp.nluug.nl/pub/graphics/blender/release/Blender3.5/blender-3.5.0-linux-x64.tar.xz;
-            hash = "sha256-p01Sgi1XU6H/thesdku6zBKkpt7EwrkekMwpNaQP/2g=";
+            url = https://ftp.nluug.nl/pub/graphics/blender/release/Blender3.5/blender-3.5.1-linux-x64.tar.xz;
+            hash = "sha256-2Crn72DqsgsVSCbE8htyrgAerJNWRs0plMXUpRNvfxw=";
           };
         };
       };
