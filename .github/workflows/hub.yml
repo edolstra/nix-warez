@@ -15,5 +15,5 @@ jobs:
       - uses: "DeterminateSystems/flakehub-push@main"
         with:
           visibility: "public"
-          upload-name: edolstra/blender-bin
+          name: edolstra/blender-bin
           directory: blender-bin
