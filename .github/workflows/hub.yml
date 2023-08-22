@@ -16,4 +16,4 @@ jobs:
         with:
           visibility: "public"
           name: edolstra/blender-bin
-          directory: blender-bin
+          directory: blender
