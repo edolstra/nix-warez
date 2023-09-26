@@ -232,6 +232,7 @@
         blender_2_90 = mkTest { blender = self.packages.x86_64-linux.blender_2_90; };
         blender_2_91 = mkTest { blender = self.packages.x86_64-linux.blender_2_91; };
         blender_2_92 = mkTest { blender = self.packages.x86_64-linux.blender_2_92; };
+        blender_2_93 = mkTest { blender = self.packages.x86_64-linux.blender_2_93; };
         blender_3_0  = mkTest { blender = self.packages.x86_64-linux.blender_3_0; };
         blender_3_1  = mkTest { blender = self.packages.x86_64-linux.blender_3_1; };
         blender_3_2  = mkTest { blender = self.packages.x86_64-linux.blender_3_2; };
