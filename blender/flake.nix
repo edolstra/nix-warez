@@ -1,7 +1,7 @@
 {
   description = "A free and open source 3D creation suite (upstream binaries)";
 
-  inputs.nixpkgs.url = "nixpkgs/nixos-22.05";
+  inputs.nixpkgs.url = "nixpkgs/nixos-23.05";
 
   outputs = { self, nixpkgs }:
 
@@ -95,10 +95,10 @@
 
         blender_2_83 = mkBlender {
           pname = "blender-bin";
-          version = "2.83.9";
+          version = "2.83.20";
           src = import <nix/fetchurl.nix> {
-            url = https://ftp.nluug.nl/pub/graphics/blender/release/Blender2.83/blender-2.83.9-linux64.tar.xz;
-            hash = "sha256-xL1i71xw3dDYPUxHl9SRsoeqBDME8QHo3tIgeLE64Oo=";
+            url = https://ftp.nluug.nl/pub/graphics/blender/release/Blender2.83/blender-2.83.20-linux-x64.tar.xz;
+            hash = "sha256-KuPyb39J+TUrcPUFuPNj0MtRshS4ZmHZTuTpxYjEFPg=";
           };
         };
 
@@ -131,10 +131,10 @@
 
         blender_2_93 = mkBlender {
           pname = "blender-bin";
-          version = "2.93.7";
+          version = "2.93.18";
           src = import <nix/fetchurl.nix> {
-            url = https://ftp.nluug.nl/pub/graphics/blender/release/Blender2.93/blender-2.93.7-linux-x64.tar.xz;
-            hash = "sha256-ZNKWs5XJrlGI9Cm/F5R3Uxy+R/WVyPIg2DYdwt1pYuY=";
+            url = https://ftp.nluug.nl/pub/graphics/blender/release/Blender2.93/blender-2.93.18-linux-x64.tar.xz;
+            hash = "sha256-+H9z8n0unluHbqpXr0SQIGf0wzHR4c30ACM6ZNocNns=";
           };
         };
 
@@ -167,10 +167,10 @@
 
         blender_3_3 = mkBlender {
           pname = "blender-bin";
-          version = "3.3.1";
+          version = "3.3.12";
           src = import <nix/fetchurl.nix> {
-            url = https://ftp.nluug.nl/pub/graphics/blender/release/Blender3.3/blender-3.3.1-linux-x64.tar.xz;
-            hash = "sha256-MImkhd1iF4XXpwIImrpy0HuPczo2LpAewUSbmjeVRvI=";
+            url = https://ftp.nluug.nl/pub/graphics/blender/release/Blender3.3/blender-3.3.12-linux-x64.tar.xz;
+            hash = "sha256-MbRmvkFS8J93DSxyil6S0WBrGMzHAY2rkqsFzaGcpFc=";
           };
         };
 
@@ -194,10 +194,10 @@
 
         blender_3_6 = mkBlender {
           pname = "blender-bin";
-          version = "3.6.3";
+          version = "3.6.5";
           src = import <nix/fetchurl.nix> {
-            url = https://ftp.nluug.nl/pub/graphics/blender/release/Blender3.6/blender-3.6.3-linux-x64.tar.xz;
-            hash = "sha256-aZQ9CsCADLjT2kGSlJkZwyTlKMDXodOa3+UuAshHL6Q=";
+            url = https://ftp.nluug.nl/pub/graphics/blender/release/Blender3.6/blender-3.6.5-linux-x64.tar.xz;
+            hash = "sha256-BbLlYkmpK4Vsi3tNd8ZeJFcCqqgdm080c07Am7zt9Cs=";
           };
         };
       };
@@ -232,6 +232,7 @@
         blender_2_90 = mkTest { blender = self.packages.x86_64-linux.blender_2_90; };
         blender_2_91 = mkTest { blender = self.packages.x86_64-linux.blender_2_91; };
         blender_2_92 = mkTest { blender = self.packages.x86_64-linux.blender_2_92; };
+        blender_2_93 = mkTest { blender = self.packages.x86_64-linux.blender_2_93; };
         blender_3_0  = mkTest { blender = self.packages.x86_64-linux.blender_3_0; };
         blender_3_1  = mkTest { blender = self.packages.x86_64-linux.blender_3_1; };
         blender_3_2  = mkTest { blender = self.packages.x86_64-linux.blender_3_2; };
