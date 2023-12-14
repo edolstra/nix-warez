@@ -167,10 +167,10 @@
 
         blender_3_3 = mkBlender {
           pname = "blender-bin";
-          version = "3.3.12";
+          version = "3.3.14";
           src = import <nix/fetchurl.nix> {
-            url = https://ftp.nluug.nl/pub/graphics/blender/release/Blender3.3/blender-3.3.12-linux-x64.tar.xz;
-            hash = "sha256-MbRmvkFS8J93DSxyil6S0WBrGMzHAY2rkqsFzaGcpFc=";
+            url = https://ftp.nluug.nl/pub/graphics/blender/release/Blender3.3/blender-3.3.14-linux-x64.tar.xz;
+            hash = "sha256-4iKRkKuLpo45U49M4i35AepwlNEcJxPn36OgdunwGc4=";
           };
         };
 
@@ -194,10 +194,10 @@
 
         blender_3_6 = mkBlender {
           pname = "blender-bin";
-          version = "3.6.5";
+          version = "3.6.7";
           src = import <nix/fetchurl.nix> {
-            url = https://ftp.nluug.nl/pub/graphics/blender/release/Blender3.6/blender-3.6.5-linux-x64.tar.xz;
-            hash = "sha256-BbLlYkmpK4Vsi3tNd8ZeJFcCqqgdm080c07Am7zt9Cs=";
+            url = https://ftp.nluug.nl/pub/graphics/blender/release/Blender3.6/blender-3.6.7-linux-x64.tar.xz;
+            hash = "sha256-xXWHvd/JB+nMVful2vUbYFPRF/8GUtybCkUEcRRYI44=";
           };
         };
 
