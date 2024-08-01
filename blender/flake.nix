@@ -1,7 +1,7 @@
 {
   description = "A free and open source 3D creation suite (upstream binaries)";
 
-  inputs.nixpkgs.url = "nixpkgs/nixos-23.11";
+  inputs.nixpkgs.url = "nixpkgs/nixos-24.05";
 
   outputs = { self, nixpkgs }:
 
@@ -218,6 +218,15 @@
             hash = "sha256-qy6j/pkWAaXmvSzaeG7KqRnAs54FUOWZeLXUAnDCYNM=";
           };
         };
+
+        blender_4_2 = mkBlender {
+          pname = "blender-bin";
+          version = "4.2.0";
+          src = import <nix/fetchurl.nix> {
+            url = https://ftp.nluug.nl/pub/graphics/blender/release/Blender4.2/blender-4.2.0-linux-x64.tar.xz;
+            hash = "sha256-T0/XZGrwH2/unUIECDGDgablJXEmjrfPnNUDO9nno1k=";
+          };
+        };
       };
 
       lib.mkBlender = mkBlender;
@@ -240,8 +249,9 @@
           blender_3_5
           blender_3_6
           blender_4_0
-          blender_4_1;
-        default = blender_4_1;
+          blender_4_1
+          blender_4_2;
+        default = blender_4_2;
       };
 
       checks.x86_64-linux = {
@@ -262,6 +272,7 @@
         blender_3_6  = mkTest { blender = self.packages.x86_64-linux.blender_3_6; };
         blender_4_0  = mkTest { blender = self.packages.x86_64-linux.blender_4_0; };
         blender_4_1  = mkTest { blender = self.packages.x86_64-linux.blender_4_1; };
+        blender_4_2  = mkTest { blender = self.packages.x86_64-linux.blender_4_2; };
       };
 
     };
