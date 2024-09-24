@@ -70,7 +70,7 @@
           pname = "blender-bin";
           version = "2.79-20190523-054dbb833e15";
           src = import <nix/fetchurl.nix> {
-            url = https://builder.blender.org/download/blender-2.79-054dbb833e15-linux-glibc224-x86_64.tar.bz2;
+            url = "https://builder.blender.org/download/blender-2.79-054dbb833e15-linux-glibc224-x86_64.tar.bz2";
             hash = "sha256-/qbRx4KKiJBka84M4iXB8z3PKzqBIuWG5Zihyf//QTU=";
           };
         };
@@ -79,7 +79,7 @@
           pname = "blender-bin";
           version = "2.81a";
           src = import <nix/fetchurl.nix> {
-            url = https://ftp.nluug.nl/pub/graphics/blender/release/Blender2.81/blender-2.81a-linux-glibc217-x86_64.tar.bz2;
+            url = "https://ftp.nluug.nl/pub/graphics/blender/release/Blender2.81/blender-2.81a-linux-glibc217-x86_64.tar.bz2";
             hash = "sha256-CNcYUF0esdJh77qWsHhyIKdtNXzluUrKEI/J4MM51sY=";
           };
         };
@@ -88,7 +88,7 @@
           pname = "blender-bin";
           version = "2.82a";
           src = import <nix/fetchurl.nix> {
-            url = https://ftp.nluug.nl/pub/graphics/blender/release/Blender2.82/blender-2.82a-linux64.tar.xz;
+            url = "https://ftp.nluug.nl/pub/graphics/blender/release/Blender2.82/blender-2.82a-linux64.tar.xz";
             hash = "sha256-+0ACWBIlJcUaWJcZkZfnQBBJT3HyshIsTdEiMk5u3r4=";
           };
         };
@@ -97,7 +97,7 @@
           pname = "blender-bin";
           version = "2.83.20";
           src = import <nix/fetchurl.nix> {
-            url = https://ftp.nluug.nl/pub/graphics/blender/release/Blender2.83/blender-2.83.20-linux-x64.tar.xz;
+            url = "https://ftp.nluug.nl/pub/graphics/blender/release/Blender2.83/blender-2.83.20-linux-x64.tar.xz";
             hash = "sha256-KuPyb39J+TUrcPUFuPNj0MtRshS4ZmHZTuTpxYjEFPg=";
           };
         };
@@ -106,7 +106,7 @@
           pname = "blender-bin";
           version = "2.90.1";
           src = import <nix/fetchurl.nix> {
-            url = https://ftp.nluug.nl/pub/graphics/blender/release/Blender2.90/blender-2.90.1-linux64.tar.xz;
+            url = "https://ftp.nluug.nl/pub/graphics/blender/release/Blender2.90/blender-2.90.1-linux64.tar.xz";
             hash = "sha256-BUZoxGo+VpIfKDcJ9Ro194YHhhgwAc8uqb4ySdE6xmc=";
           };
         };
@@ -115,7 +115,7 @@
           pname = "blender-bin";
           version = "2.91.2";
           src = import <nix/fetchurl.nix> {
-            url = https://ftp.nluug.nl/pub/graphics/blender/release/Blender2.91/blender-2.91.2-linux64.tar.xz;
+            url = "https://ftp.nluug.nl/pub/graphics/blender/release/Blender2.91/blender-2.91.2-linux64.tar.xz";
             hash = "sha256-jx4eiFJ1DhA4V5M2x0YcGlSS2pc84Yjh5crpmy95aiM=";
           };
         };
@@ -124,7 +124,7 @@
           pname = "blender-bin";
           version = "2.92.0";
           src = import <nix/fetchurl.nix> {
-            url = https://ftp.nluug.nl/pub/graphics/blender/release/Blender2.92/blender-2.92.0-linux64.tar.xz;
+            url = "https://ftp.nluug.nl/pub/graphics/blender/release/Blender2.92/blender-2.92.0-linux64.tar.xz";
             hash = "sha256-LNF61unWwkGsFLhK1ucrUHruyXnaPZJrGhRuiODrPrQ=";
           };
         };
@@ -133,7 +133,7 @@
           pname = "blender-bin";
           version = "2.93.18";
           src = import <nix/fetchurl.nix> {
-            url = https://ftp.nluug.nl/pub/graphics/blender/release/Blender2.93/blender-2.93.18-linux-x64.tar.xz;
+            url = "https://ftp.nluug.nl/pub/graphics/blender/release/Blender2.93/blender-2.93.18-linux-x64.tar.xz";
             hash = "sha256-+H9z8n0unluHbqpXr0SQIGf0wzHR4c30ACM6ZNocNns=";
           };
         };
@@ -142,7 +142,7 @@
           pname = "blender-bin";
           version = "3.0.1";
           src = import <nix/fetchurl.nix> {
-            url = https://ftp.nluug.nl/pub/graphics/blender/release/Blender3.0/blender-3.0.1-linux-x64.tar.xz;
+            url = "https://ftp.nluug.nl/pub/graphics/blender/release/Blender3.0/blender-3.0.1-linux-x64.tar.xz";
             hash = "sha256-TxeqPRDtbhPmp1R58aUG9YmYuMAHgSoIhtklTJU+KuU=";
           };
         };
@@ -151,7 +151,7 @@
           pname = "blender-bin";
           version = "3.1.2";
           src = import <nix/fetchurl.nix> {
-            url = https://ftp.nluug.nl/pub/graphics/blender/release/Blender3.1/blender-3.1.2-linux-x64.tar.xz;
+            url = "https://ftp.nluug.nl/pub/graphics/blender/release/Blender3.1/blender-3.1.2-linux-x64.tar.xz";
             hash = "sha256-wdNFslxvg3CLJoHTVNcKPmAjwEu3PMeUM2bAwZ5UKVg=";
           };
         };
@@ -160,7 +160,7 @@
           pname = "blender-bin";
           version = "3.2.2";
           src = import <nix/fetchurl.nix> {
-            url = https://ftp.nluug.nl/pub/graphics/blender/release/Blender3.2/blender-3.2.2-linux-x64.tar.xz;
+            url = "https://ftp.nluug.nl/pub/graphics/blender/release/Blender3.2/blender-3.2.2-linux-x64.tar.xz";
             hash = "sha256-FyZWAVfZDPKqrrbSXe0Xg9Zr/wQ4FM2VuQ/Arx2eAYs=";
           };
         };
@@ -169,7 +169,7 @@
           pname = "blender-bin";
           version = "3.3.21";
           src = import <nix/fetchurl.nix> {
-            url = https://ftp.nluug.nl/pub/graphics/blender/release/Blender3.3/blender-3.3.21-linux-x64.tar.xz;
+            url = "https://ftp.nluug.nl/pub/graphics/blender/release/Blender3.3/blender-3.3.21-linux-x64.tar.xz";
             hash = "sha256-KvaLcca7JOLT4ho+LbOax9c2tseEPASQie/qg8zx8Y0=";
           };
         };
@@ -178,7 +178,7 @@
           pname = "blender-bin";
           version = "3.4.1";
           src = import <nix/fetchurl.nix> {
-            url = https://ftp.nluug.nl/pub/graphics/blender/release/Blender3.4/blender-3.4.1-linux-x64.tar.xz;
+            url = "https://ftp.nluug.nl/pub/graphics/blender/release/Blender3.4/blender-3.4.1-linux-x64.tar.xz";
             hash = "sha256-FJf4P5Ppu73nRUIseV7RD+FfkvViK0Qhdo8Un753aYE=";
           };
         };
@@ -187,7 +187,7 @@
           pname = "blender-bin";
           version = "3.5.1";
           src = import <nix/fetchurl.nix> {
-            url = https://ftp.nluug.nl/pub/graphics/blender/release/Blender3.5/blender-3.5.1-linux-x64.tar.xz;
+            url = "https://ftp.nluug.nl/pub/graphics/blender/release/Blender3.5/blender-3.5.1-linux-x64.tar.xz";
             hash = "sha256-2Crn72DqsgsVSCbE8htyrgAerJNWRs0plMXUpRNvfxw=";
           };
         };
@@ -196,7 +196,7 @@
           pname = "blender-bin";
           version = "3.6.14";
           src = import <nix/fetchurl.nix> {
-            url = https://ftp.nluug.nl/pub/graphics/blender/release/Blender3.6/blender-3.6.14-linux-x64.tar.xz;
+            url = "https://ftp.nluug.nl/pub/graphics/blender/release/Blender3.6/blender-3.6.14-linux-x64.tar.xz";
             hash = "sha256-Z5YA/IFeVaAgO3UPsXK8MHvyi+f0QE/fZRreEb64Ewg=";
           };
         };
@@ -205,7 +205,7 @@
           pname = "blender-bin";
           version = "4.0.2";
           src = import <nix/fetchurl.nix> {
-            url = https://ftp.nluug.nl/pub/graphics/blender/release/Blender4.0/blender-4.0.2-linux-x64.tar.xz;
+            url = "https://ftp.nluug.nl/pub/graphics/blender/release/Blender4.0/blender-4.0.2-linux-x64.tar.xz";
             hash = "sha256-VYOlWIc22ohYxSLvF//11zvlnEem/pGtKcbzJj4iCGo=";
           };
         };
@@ -214,7 +214,7 @@
           pname = "blender-bin";
           version = "4.1.1";
           src = import <nix/fetchurl.nix> {
-            url = https://ftp.nluug.nl/pub/graphics/blender/release/Blender4.1/blender-4.1.1-linux-x64.tar.xz;
+            url = "https://ftp.nluug.nl/pub/graphics/blender/release/Blender4.1/blender-4.1.1-linux-x64.tar.xz";
             hash = "sha256-qy6j/pkWAaXmvSzaeG7KqRnAs54FUOWZeLXUAnDCYNM=";
           };
         };
@@ -223,7 +223,7 @@
           pname = "blender-bin";
           version = "4.2.1";
           src = import <nix/fetchurl.nix> {
-            url = https://ftp.nluug.nl/pub/graphics/blender/release/Blender4.2/blender-4.2.1-linux-x64.tar.xz;
+            url = "https://ftp.nluug.nl/pub/graphics/blender/release/Blender4.2/blender-4.2.1-linux-x64.tar.xz";
             hash = "sha256-vg+6oMHlLUVSAjIgtMZzUe+7cHysSbs4H8vuIYJEcAU=";
           };
         };
