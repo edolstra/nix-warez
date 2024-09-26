@@ -13,7 +13,7 @@ rec {
         let
           version = "2.5.21851";
 
-          url = https://www.gog.com/game/baldurs_gate_2_enhanced_edition;
+          url = "https://www.gog.com/game/baldurs_gate_2_enhanced_edition";
 
           /* Put the game data in a fixed-output derivation so we don't need
              to rebuild it when the wrapper script changes. */
