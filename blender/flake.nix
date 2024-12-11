@@ -1,7 +1,7 @@
 {
   description = "A free and open source 3D creation suite (upstream binaries)";
 
-  inputs.nixpkgs.url = "nixpkgs/nixos-24.05";
+  inputs.nixpkgs.url = "nixpkgs/nixos-24.11";
 
   outputs = { self, nixpkgs }:
 
@@ -230,10 +230,10 @@
 
         blender_4_3 = mkBlender {
           pname = "blender-bin";
-          version = "4.3.0";
+          version = "4.3.1";
           src = import <nix/fetchurl.nix> {
-            url = "https://ftp.nluug.nl/pub/graphics/blender/release/Blender4.3/blender-4.3.0-linux-x64.tar.xz";
-            hash = "sha256-YmT/TPULr2vmCRoo08Kc8l3DjY2qMIKHTOlNUg0+arY=";
+            url = "https://ftp.nluug.nl/pub/graphics/blender/release/Blender4.3/blender-4.3.1-linux-x64.tar.xz";
+            hash = "sha256-+CQyTzriIj3GcsnOoBQQVbUSmjlBGVRe4MhN6pLng2E=";
           };
         };
       };
