@@ -248,10 +248,10 @@
 
         blender_4_5 = mkBlender {
           pname = "blender-bin";
-          version = "4.5.0";
+          version = "4.5.1";
           src = import <nix/fetchurl.nix> {
-            url = "https://ftp.nluug.nl/pub/graphics/blender/release/Blender4.5/blender-4.5.0-linux-x64.tar.xz";
-            hash = "sha256-EYi5XMEjIcdwtjGTn3wloJaRC2+ISpkL+cD2LVKziuw=";
+            url = "https://ftp.nluug.nl/pub/graphics/blender/release/Blender4.5/blender-4.5.1-linux-x64.tar.xz";
+            hash = "sha256-CFp+1O2Aw8tmeDutdvI285iX3l0ziEq9Ez4MbblMDxQ=";
           };
         };
       };
