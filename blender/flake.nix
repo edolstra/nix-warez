@@ -194,10 +194,10 @@
 
         blender_3_6 = mkBlender {
           pname = "blender-bin";
-          version = "3.6.22";
+          version = "3.6.23";
           src = import <nix/fetchurl.nix> {
-            url = "https://ftp.nluug.nl/pub/graphics/blender/release/Blender3.6/blender-3.6.22-linux-x64.tar.xz";
-            hash = "sha256-WVPIf21INgUGGng5dYUnxny4ITjQ01kPktjHarx1dgA=";
+            url = "https://ftp.nluug.nl/pub/graphics/blender/release/Blender3.6/blender-3.6.23-linux-x64.tar.xz";
+            hash = "sha256-DpoYr00AYLgl6WF+JKd191ng+fZyccBi89U6U5AwrwA=";
           };
         };
 
