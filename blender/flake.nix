@@ -221,10 +221,10 @@
 
         blender_4_2 = mkBlender {
           pname = "blender-bin";
-          version = "4.2.9";
+          version = "4.2.12";
           src = import <nix/fetchurl.nix> {
-            url = "https://ftp.nluug.nl/pub/graphics/blender/release/Blender4.2/blender-4.2.9-linux-x64.tar.xz";
-            hash = "sha256-37wSen0o+cIXWyO/nWcBsoVfMe7fs5H5puYK2yRXKEY=";
+            url = "https://ftp.nluug.nl/pub/graphics/blender/release/Blender4.2/blender-4.2.12-linux-x64.tar.xz";
+            hash = "sha256-lTcXAR4Aohv9TM8OivDZAbTD7wnEjxTBahjBRthYvPc=";
           };
         };
 
