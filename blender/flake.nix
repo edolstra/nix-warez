@@ -7,12 +7,12 @@
 
     let
 
-      pkgs = import nixpkgs {
+      new-pkgs = import nixpkgs {
         system = "x86_64-linux";
         overlays = [ self.overlays.default ];
       };
 
-      mkBlender = { pname, version, src }:
+      mkBlender = { pkgs, pname, version, src }:
         with pkgs;
 
         let
@@ -56,7 +56,7 @@
         };
 
       mkTest = { blender }:
-        pkgs.runCommand "blender-test" { buildInputs = [ blender ]; }
+        new-pkgs.runCommand "blender-test" { buildInputs = [ blender ]; }
           ''
             blender --version
             touch $out
@@ -67,6 +67,7 @@
       overlays.default = final: prev: {
 
         blender_2_79 = mkBlender {
+          pkgs = final;
           pname = "blender-bin";
           version = "2.79-20190523-054dbb833e15";
           src = import <nix/fetchurl.nix> {
@@ -76,6 +77,7 @@
         };
 
         blender_2_81 = mkBlender {
+          pkgs = final;
           pname = "blender-bin";
           version = "2.81a";
           src = import <nix/fetchurl.nix> {
@@ -85,6 +87,7 @@
         };
 
         blender_2_82 = mkBlender {
+          pkgs = final;
           pname = "blender-bin";
           version = "2.82a";
           src = import <nix/fetchurl.nix> {
@@ -94,6 +97,7 @@
         };
 
         blender_2_83 = mkBlender {
+          pkgs = final;
           pname = "blender-bin";
           version = "2.83.20";
           src = import <nix/fetchurl.nix> {
@@ -103,6 +107,7 @@
         };
 
         blender_2_90 = mkBlender {
+          pkgs = final;
           pname = "blender-bin";
           version = "2.90.1";
           src = import <nix/fetchurl.nix> {
@@ -112,6 +117,7 @@
         };
 
         blender_2_91 = mkBlender {
+          pkgs = final;
           pname = "blender-bin";
           version = "2.91.2";
           src = import <nix/fetchurl.nix> {
@@ -121,6 +127,7 @@
         };
 
         blender_2_92 = mkBlender {
+          pkgs = final;
           pname = "blender-bin";
           version = "2.92.0";
           src = import <nix/fetchurl.nix> {
@@ -130,6 +137,7 @@
         };
 
         blender_2_93 = mkBlender {
+          pkgs = final;
           pname = "blender-bin";
           version = "2.93.18";
           src = import <nix/fetchurl.nix> {
@@ -139,6 +147,7 @@
         };
 
         blender_3_0 = mkBlender {
+          pkgs = final;
           pname = "blender-bin";
           version = "3.0.1";
           src = import <nix/fetchurl.nix> {
@@ -148,6 +157,7 @@
         };
 
         blender_3_1 = mkBlender {
+          pkgs = final;
           pname = "blender-bin";
           version = "3.1.2";
           src = import <nix/fetchurl.nix> {
@@ -259,7 +269,7 @@
       lib.mkBlender = mkBlender;
 
       packages.x86_64-linux = rec {
-        inherit (pkgs)
+        inherit (new-pkgs)
           blender_2_79
           blender_2_81
           blender_2_82
