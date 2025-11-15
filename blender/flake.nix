@@ -39,7 +39,9 @@
               mv blender-* blender
 
               mkdir -p $out/share/applications
+              mkdir -p $out/share/icons/hicolor/scalable/apps
               mv ./blender/blender.desktop $out/share/applications/blender.desktop
+              mv ./blender/blender.svg $out/share/icons/hicolor/scalable/apps/blender.svg
 
               mkdir $out/bin
 
