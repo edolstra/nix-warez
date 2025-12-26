@@ -257,6 +257,15 @@
             hash = "sha256-Lm746Z/DYycnBCndyOe60oWd2HiloTfS4L8PAvZ5JQU=";
           };
         };
+
+        blender_5_0 = mkBlender {
+          pname = "blender-bin";
+          version = "5.0.1";
+          src = import <nix/fetchurl.nix> {
+            url = "https://ftp.nluug.nl/pub/graphics/blender/release/Blender5.0/blender-5.0.1-linux-x64.tar.xz";
+            hash = "sha256-gBlYDuG3Ji5QX0GWoAI3zPdDyI0gWzjTQgFRBnbmCwk=";
+          };
+        };
       };
 
       lib.mkBlender = mkBlender;
@@ -283,8 +292,9 @@
           blender_4_2
           blender_4_3
           blender_4_4
-          blender_4_5;
-        default = blender_4_5;
+          blender_4_5
+          blender_5_0;
+        default = blender_5_0;
       };
 
       checks.x86_64-linux = {
@@ -309,6 +319,7 @@
         blender_4_3  = mkTest { blender = self.packages.x86_64-linux.blender_4_3; };
         blender_4_4  = mkTest { blender = self.packages.x86_64-linux.blender_4_4; };
         blender_4_5  = mkTest { blender = self.packages.x86_64-linux.blender_4_5; };
+        blender_5_0  = mkTest { blender = self.packages.x86_64-linux.blender_5_0; };
       };
 
     };
